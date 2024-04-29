@@ -3,7 +3,7 @@ from sem_app.models import TossCoin
 
 
 class Command(BaseCommand):
-    help = 'Get user by id'
+    help = 'Toss coin'
 
     # add_arguments позволяет парсить командную строку
     def handle(self, *args, **kwargs):

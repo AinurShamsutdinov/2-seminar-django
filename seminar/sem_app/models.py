@@ -31,14 +31,8 @@ class Author(models.Model):
     biography = models.TextField()
     birthday = models.DateField()
 
-    def __init__(self, name, last_name, email, biography, birthday, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.name = name
-        self.last_name = last_name
-        self.full_name = f'{name} {last_name}'
-        self.email = email
-        self.biography = biography
-        self.birthday = birthday
+    def __str__(self):
+        return f'Author: {self.name} {self.last_name} {self.email}'
 
 
 class Article(models.Model):
@@ -49,3 +43,6 @@ class Article(models.Model):
     category = models.CharField(max_length=100)
     views = models.IntegerField(default=0)
     published = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'Article: {self.head} {self.content} {self.author}'
