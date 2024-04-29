@@ -46,3 +46,34 @@ class Article(models.Model):
 
     def __str__(self):
         return f'Article: {self.head} {self.content} {self.author}'
+    
+
+class Commentary(models.Model):
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    comment = models.TextField()
+    date_creat = models.DateTimeField()
+    date_edit = models.DateTimeField()
+
+
+class Client(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.EmailField()
+    phone = models.CharField(max_length=9)
+    address = models.CharField(max_length=100)
+    date_reg = models.DateTimeField()
+
+
+class Item(models.Model):
+    name = models.CharField(max_length=30)
+    description = models.TextField()
+    price = models.FloatField()
+    amount = models.IntegerField()
+    date_add = models.DateTimeField()
+
+
+class Order(models.Model):
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    items = models.ManyToManyField(Item)
+    full_price = models.FloatField()
+    date_order = models.DateTimeField()

@@ -40,6 +40,33 @@
             "django": true,
             "autoStartBrowser": false,
             "program": "${workspaceFolder}/manage.py"
+        },
+        {
+            "name": "Python Debugger Django: Commentary",
+            "type": "debugpy",
+            "request": "launch",
+            "args": [
+                "com_create",
+                "1",
+                "3",
+                "commentary_about_someting",
+            ],
+            "django": true,
+            "autoStartBrowser": false,
+            "program": "${workspaceFolder}/manage.py"
+        },
+        {
+            "name": "Python Debugger Django: Get Articles",
+            "type": "debugpy",
+            "request": "launch",
+            "args": [
+                "get_article",
+                "joan",
+                "3",
+            ],
+            "django": true,
+            "autoStartBrowser": false,
+            "program": "${workspaceFolder}/manage.py"
         }
     ]
 }
